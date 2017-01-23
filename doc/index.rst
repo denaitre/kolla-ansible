@@ -55,6 +55,7 @@ Kolla Overview
    advanced-configuration
    operating-kolla
    security
+   multi-regions
 
 Kolla Services
 ==============
