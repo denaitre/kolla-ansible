@@ -29,7 +29,7 @@ compute_driver = ironic.IronicDriver
 ram_allocation_ratio = 1.0
 reserved_host_memory_mb = 0
 {% elif enable_nova_fake | bool %}
-host = {{ ansible_hostname }}_{{ service_name }}
+host = {{ ansible_hostname }}-{{ service_name }}
 compute_driver = fake.FakeDriver
 {% elif nova_compute_virt_type == 'vmware' %}
 compute_driver = vmwareapi.VMwareVCDriver
