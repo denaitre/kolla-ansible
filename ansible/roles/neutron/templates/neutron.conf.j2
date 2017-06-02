@@ -30,9 +30,9 @@ interface_driver = openvswitch
 interface_driver = linuxbridge
 {% endif %}
 
-{% if enable_nova_fake | bool %}
-ovs_integration_bridge = br-int-{{ item }}
-host = {{ ansible_hostname }}_{{ item }}
+{% if enable_nova_fake | bool and ansible_hostname in groups['compute']%}
+ovs_integration_bridge = br-int-{{ service_name }}
+host = {{ ansible_hostname }}-{{ service_name }}
 {% endif %}
 
 allow_overlapping_ips = true
